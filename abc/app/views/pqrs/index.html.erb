@@ -15,8 +15,7 @@
                           <th>Title</th>
                           <th>Subject</th>
                           <th>Body</th>
-                          <th>Creation date</th>
-                          <th>Expiration date</th>
+                          >
                           
                           <th>Pqr files</th>
                           <th colspan="3"></th>
@@ -32,10 +31,12 @@
                             <td><%= pqr.title %></td>
                             <td><%= pqr.subject %></td>
                             <td><%= pqr.body %></td>
-                            <td><%= pqr.creation_date %></td>
-                            <td><%= pqr.expiration_date %></td>
+                            
                             <td><%= pqr.pqr_files %></td>
+                          
                             <td><%= link_to 'Show', pqr %></td>
+                              <% if current_user && current_user.admin
+                                 %> 
                             <td><%= link_to 'Edit', edit_pqr_path(pqr) %></td>
                             <td><%= link_to 'Destroy', pqr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                           </tr>
