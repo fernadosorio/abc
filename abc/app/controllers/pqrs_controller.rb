@@ -25,7 +25,7 @@ class PqrsController < ApplicationController
   # POST /pqrs.json
   def create
     @pqr = Pqr.new(pqr_params)
-
+    @pqr.user = current_user
     respond_to do |format|
       if @pqr.save
         format.html { redirect_to @pqr, notice: 'Pqr was successfully created.' }
@@ -60,8 +60,7 @@ class PqrsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  private
+ private
     # Use callbacks to share common setup or constraints between actions.
     def set_pqr
       @pqr = Pqr.find(params[:id])
@@ -69,6 +68,6 @@ class PqrsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pqr_params
-      params.fetch(:pqr, {})
+      params.require(:pqr).permit(:first_name, :last_name, :email, :title, :subject, :body,:user_id)
     end
 end

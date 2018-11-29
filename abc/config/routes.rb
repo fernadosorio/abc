@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :rols
+  resources :departments
+  resources :pqr_files
   devise_for :users
   resources :pqrs
   get 'home/index'

@@ -10,9 +10,27 @@
       </ul>
     </div>
   <% end %>
-  <div class="row">
-    <% unless user_signed_in? %>s
-  <div class="field col s12 m6">
+<div class="row">
+    <% unless user_signed_in? %>
+
+        <div class="field col s12 m6">
+            <%= form.label :first_name %>
+            <%= form.text_field :first_name %>
+        </div>
+
+        <div class="field col s12 m6">
+            <%= form.label :last_name %>
+            <%= form.text_field :last_name %>
+        </div>
+
+        <div class="field col s12 m6">
+            <%= form.label :email %>
+            <%= form.text_field :email %>
+        </div>
+
+    <% end %>
+
+    <div class="field col s12 m6">
         <%= form.label :title %>
         <%= form.text_field :title %>
     </div>
@@ -37,13 +55,16 @@
         <%= form.datetime_select :expiration_date %>
     </div>
 
+
     <div class="field col s12 m6">
-            <%= form.label :user_id %>
-            <%= form.text_field :user_id %>
+        <%= form.label :pqr_files_id %>
+        <%= form.text_field :pqr_files_id, value:'1' %>
     </div>
-  <% end %>
-   
+
+</div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+<input type="file">
