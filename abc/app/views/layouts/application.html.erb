@@ -8,8 +8,39 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+<%= render 'base/nav' %>
   <body>
+    <div>
+
+</div>
+
+<main>
+    <div class="container">
+        <br>
+        <div class="card-panel">
+            <div class="center">
+                <h4>Bienvenido al sistema de PQR de ABC</h4>
+            </div>
+            <div class="row">
+                <div class="col s12 m6 center">
+                    <img src="http://www.empocaldas.com.co/web/images/iconos-nuevos2.png" class="responsive-img" alt="">
+                </div>
+                <div class="col s12 m6">
+                    <center><h5>Tienes alguna Peticion, Queja o Reclamo?</h5></center>
+                    <hr>
+                    <p class="">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas itaque quae obcaecati necessitatibus veniam, suscipit error, incidunt accusamus fuga, perferendis impedit ea ut laudantium, deleniti aut amet facilis dicta mollitia!
+                    </p>
+                    <center>
+                        <%= link_to 'Crear un pqr', root_path, class:'btn waves-effect waves-light pulse btn-lg pink darken-3' %>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
     <%= yield %>
+    <br>
+    <%= render 'base/footer' %>
   </body>
 </html>
